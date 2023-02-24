@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-long giveSum(long long n){
+long calculateNormalSum(long long n){
     string a = to_string(n);
     long sum = 0;
     for (int i=0;i<a.length();i++){
@@ -9,11 +9,11 @@ long giveSum(long long n){
     }
     return sum;
 }
-long add(long long n)
+long addUptoOneDigit(long long n)
 {
-    long l = giveSum(n);
+    long l = calculateNormalSum(n);
     while (to_string(l).length() >1 && l>0){
-        l = giveSum(l);
+        l = calculateNormalSum(l);
     }
     return l;
 }
@@ -23,7 +23,7 @@ long add(long long n)
 int main(){
     long long a = 8888888888888888;
     int b = 9;
-    cout<<add(b)<<endl;
-    cout<<add(a)<<endl;
+    cout<<addUptoOneDigit(a)<<endl;
+    cout<<addUptoOneDigit(b)<<endl;
 
 }
